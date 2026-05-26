@@ -5,17 +5,14 @@ on:
     branches: [main]
 
 jobs:
-
   test:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Setup Python
         uses: actions/setup-python@v4
-
         with:
           python-version: "3.11"
 
@@ -27,16 +24,11 @@ jobs:
           PYTHONPATH: .
         run: pytest tests/
 
-
-
   build-and-push:
-
     needs: test
-
     runs-on: ubuntu-latest
-
+    environment: production
     steps:
-
       - name: Checkout Code
         uses: actions/checkout@v3
 
@@ -51,3 +43,4 @@ jobs:
 
       - name: Push Docker Image
         run: docker push zee98554/flask-cicd-app:latest
+
