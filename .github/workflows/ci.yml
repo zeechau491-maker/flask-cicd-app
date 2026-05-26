@@ -35,6 +35,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    environment: production 
+
     steps:
 
       - name: Checkout Code
