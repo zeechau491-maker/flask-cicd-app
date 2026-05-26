@@ -8,7 +8,6 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-
     steps:
 
       - name: Checkout Code
@@ -24,9 +23,11 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Tests
-          env:
-            PYTHONPATH:.                        
+        env:
+          PYTHONPATH: .
         run: pytest tests/
+
+
 
   build-and-push:
 
