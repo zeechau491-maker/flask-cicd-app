@@ -48,7 +48,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker Image
-        run: docker build -t YOUR_DOCKERHUB_USERNAME/flask-cicd-app:latest .
+        run: docker build -t zee98554/flask-cicd-app:latest .
 
       - name: Push Docker Image
-        run: docker push YOUR_DOCKERHUB_USERNAME/flask-cicd-app:latest
+        run: docker push zee98554/flask-cicd-app:latest
